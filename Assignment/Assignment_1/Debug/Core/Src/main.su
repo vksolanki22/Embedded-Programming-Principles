@@ -1,0 +1,10 @@
+../Core/Src/main.c:131:5:main	16	static
+../Core/Src/main.c:230:6:SystemClock_Config	96	static
+../Core/Src/main.c:291:13:MX_USART2_UART_Init	8	static
+../Core/Src/main.c:326:13:MX_GPIO_Init	40	static
+../Core/Src/main.c:351:13:showMenu	8	static
+../Core/Src/main.c:366:13:blinkAsMorseCode	24	static
+../Core/Src/main.c:417:13:handleSpace	24	static
+../Core/Src/main.c:439:13:isSpeciqalLetter	32	static
+../Core/Src/main.c:470:16:getIndexforSpecialChar	16	static
+../Core/Src/main.c:545:6:Error_Handler	4	static,ignoring_inline_asm

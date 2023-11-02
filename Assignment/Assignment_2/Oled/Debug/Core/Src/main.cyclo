@@ -1,0 +1,12 @@
+../Core/Src/main.c:83:6:isPasswordMatched	3
+../Core/Src/main.c:101:13:changeSpeakerFrequency	7
+../Core/Src/main.c:184:6:ErrorSound	3
+../Core/Src/main.c:210:6:SuccessSound	3
+../Core/Src/main.c:236:6:configurePassword	3
+../Core/Src/main.c:270:5:main	8
+../Core/Src/main.c:392:6:SystemClock_Config	4
+../Core/Src/main.c:453:13:MX_SPI1_Init	2
+../Core/Src/main.c:493:13:MX_TIM1_Init	7
+../Core/Src/main.c:572:13:MX_USART2_UART_Init	2
+../Core/Src/main.c:607:13:MX_GPIO_Init	1
+../Core/Src/main.c:640:6:Error_Handler	1

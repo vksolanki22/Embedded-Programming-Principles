@@ -1,0 +1,92 @@
+Configuration	Oled
+STM32CubeMX 	6.9.2
+Date	11/01/2023
+MCU	STM32L432KCUx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC1	IN5 Single-ended	ADC1_IN5	PA0
+RCC	Crystal/Ceramic Resonator	RCC_OSC32_IN	PC14-OSC32_IN (PC14)
+RCC	Crystal/Ceramic Resonator	RCC_OSC32_OUT	PC15-OSC32_OUT (PC15)
+SPI1	Transmit Only Master	SPI1_MOSI	PA12
+SPI1	Transmit Only Master	SPI1_SCK	PA5
+SYS	Serial Wire	SYS_JTCK-SWCLK	PA14 (JTCK-SWCLK)
+SYS	Serial Wire	SYS_JTMS-SWDIO	PA13 (JTMS-SWDIO)
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+TIM1	Internal Clock	TIM1_VS_ClockSourceINT	VP_TIM1_VS_ClockSourceINT
+USART2	Asynchronous	USART2_RX	PA15 (JTDI)
+USART2	Asynchronous	USART2_TX	PA2
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+2	PC14-OSC32_IN (PC14)	RCC_OSC32_IN	
+3	PC15-OSC32_OUT (PC15)	RCC_OSC32_OUT	
+6	PA0	ADC1_IN5	
+8	PA2	USART2_TX	VCP_TX
+11	PA5	SPI1_SCK	
+22	PA12	SPI1_MOSI	
+23	PA13 (JTMS-SWDIO)	SYS_JTMS-SWDIO	SWDIO
+24	PA14 (JTCK-SWCLK)	SYS_JTCK-SWCLK	SWCLK
+25	PA15 (JTDI)	USART2_RX	VCP_RX
+26	PB3 (JTDO-TRACESWO)	GPIO_Output	LD3 [Green]
+27	PB4 (NJTRST)	GPIO_Output	SSD1331_CS
+28	PB5	GPIO_Output	SSD1331_DC
+29	PB6	GPIO_Output	SSD1331_RES
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC1	IN5 Single-ended	ADC1_IN5	PA0
+RCC	Crystal/Ceramic Resonator	RCC_OSC32_IN	PC14-OSC32_IN (PC14)
+RCC	Crystal/Ceramic Resonator	RCC_OSC32_OUT	PC15-OSC32_OUT (PC15)
+SPI1	Transmit Only Master	SPI1_MOSI	PA12
+SPI1	Transmit Only Master	SPI1_SCK	PA5
+SYS	Serial Wire	SYS_JTCK-SWCLK	PA14 (JTCK-SWCLK)
+SYS	Serial Wire	SYS_JTMS-SWDIO	PA13 (JTMS-SWDIO)
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+TIM1	Internal Clock	TIM1_VS_ClockSourceINT	VP_TIM1_VS_ClockSourceINT
+USART2	Asynchronous	USART2_RX	PA15 (JTDI)
+USART2	Asynchronous	USART2_TX	PA2
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+2	PC14-OSC32_IN (PC14)	RCC_OSC32_IN	
+3	PC15-OSC32_OUT (PC15)	RCC_OSC32_OUT	
+6	PA0	ADC1_IN5	
+8	PA2	USART2_TX	VCP_TX
+11	PA5	SPI1_SCK	
+22	PA12	SPI1_MOSI	
+23	PA13 (JTMS-SWDIO)	SYS_JTMS-SWDIO	SWDIO
+24	PA14 (JTCK-SWCLK)	SYS_JTCK-SWCLK	SWCLK
+25	PA15 (JTDI)	USART2_RX	VCP_RX
+26	PB3 (JTDO-TRACESWO)	GPIO_Output	LD3 [Green]
+27	PB4 (NJTRST)	GPIO_Output	SSD1331_CS
+28	PB5	GPIO_Output	SSD1331_DC
+29	PB6	GPIO_Output	SSD1331_RES
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : Oled
+Project Folder : C:\Users\Vivek\OneDrive - Conestoga College\Embedded Programming Principles\Assignment\Assignment_3\Oled
+Toolchain / IDE : STM32CubeIDE
+Firmware Package Name and Version : STM32Cube FW_L4 V1.18.0
+
+
+Code Generation Settings : 
+STM32Cube MCU packages and embedded software packs : Copy only the necessary library files
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : No
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : 
+
+
+
+
+
