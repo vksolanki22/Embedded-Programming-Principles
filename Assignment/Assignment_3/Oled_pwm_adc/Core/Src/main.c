@@ -33,66 +33,61 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+#define DEBUG_ON
 //#define DEBUG_ON
 typedef enum
 {
-	CHANNEL1 = 0,
-	CHANNEL2,
-	CHANNEL3,
-	CHANNEL_MAX
-}ChannelNum_e;
+	CHANNEL1 = 0, CHANNEL2, CHANNEL3, CHANNEL_MAX
+} ChannelNum_e;
 
 typedef enum
 {
-	TEMPERATURE_UNIT_CELSIUS = 0,
-	TEMPERATURE_UNIT_FAHRENHEIT,
-	TEMPERATURE_UNIT_MAX
-}TemperatureUnit_e;
+	TEMPERATURE_UNIT_CELSIUS = 0, TEMPERATURE_UNIT_FAHRENHEIT, TEMPERATURE_UNIT_MAX
+} TemperatureUnit_e;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
 /*******************************************************************************
-  * FUNCTION      : setPwmDutyCycle()
-  * PARAMETERS    : timer_channel_num (input) : Pass here the channel number
-  *  			    Example : TIM_CHANNEL_1, TIM_CHANNEL_2 or TIM_CHANNEL_3
-  *  			    percentage (input) 		 : Pass here the duty cycle percentage (0-100)
-  * RETURNS       : none
-  * DESCRIPTION   : This function sets the duty cycle for timer 1's
-  *				 	whatever channel number is passed.
-  *******************************************************************************
-  */
+ * FUNCTION      : setPwmDutyCycle()
+ * PARAMETERS    : timer_channel_num (input) : Pass here the channel number
+ *  			    Example : TIM_CHANNEL_1, TIM_CHANNEL_2 or TIM_CHANNEL_3
+ *  			    percentage (input) 		 : Pass here the duty cycle percentage (0-100)
+ * RETURNS       : none
+ * DESCRIPTION   : This function sets the duty cycle for timer 1's
+ *				 	whatever channel number is passed.
+ *******************************************************************************
+ */
 void setPwmDutyCycle(ChannelNum_e timer_channel_num, uint16_t percentage);
 /*******************************************************************************
-  * FUNCTION      : getTempratureValue()
-  * PARAMETERS    : uint32_t iSensorValue
-  * RETURNS       : float
-  * DESCRIPTION   : This Function Calculates the Temparature value from value readed
-  * 				from sensor and returns float value which will be on °C.
-  *******************************************************************************
-  */
+ * FUNCTION      : getTempratureValue()
+ * PARAMETERS    : uint32_t iSensorValue
+ * RETURNS       : float
+ * DESCRIPTION   : This Function Calculates the Temparature value from value readed
+ * 				from sensor and returns float value which will be on °C.
+ *******************************************************************************
+ */
 static float getTempratureValue(uint32_t iSensorValue);
 
 /*******************************************************************************
-  * FUNCTION      : conevertToFerenhit()
-  * PARAMETERS    : float temperatureValue
-  * RETURNS       : float
-  * DESCRIPTION   : This Function converts the value from °C to °F
-  *******************************************************************************
-  */
+ * FUNCTION      : conevertToFerenhit()
+ * PARAMETERS    : float temperatureValue
+ * RETURNS       : float
+ * DESCRIPTION   : This Function converts the value from °C to °F
+ *******************************************************************************
+ */
 static float conevertToFerenhit(float temperatureValue);
 
 /*******************************************************************************
-  * FUNCTION      : displayTemparatureAndGlowColour()
-  * PARAMETERS    : float temperatureValue
-  * RETURNS       : none
-  * DESCRIPTION   : This function derives the temprature range from temperatureValue
-  *					then accoding to defined raangle display Temprature string on OLED
-  *					and glow LED with colour.
-  *******************************************************************************
-  */
+ * FUNCTION      : displayTemparatureAndGlowColour()
+ * PARAMETERS    : float temperatureValue
+ * RETURNS       : none
+ * DESCRIPTION   : This function derives the temprature range from temperatureValue
+ *					then accoding to defined raangle display Temprature string on OLED
+ *					and glow LED with colour.
+ *******************************************************************************
+ */
 static void displayTemparatureAndGlowColour(float temperatureValue);
 /* USER CODE END PD */
 
@@ -125,7 +120,6 @@ static void MX_SPI1_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_ADC1_Init(void);
 /* USER CODE BEGIN PFP */
-
 
 /* USER CODE END PFP */
 
@@ -230,7 +224,7 @@ int main(void)
 			// Derive temparature unit to be displayed
 			if (buttonState == GPIO_PIN_RESET)
 			{
-				if(temperatureUnit == TEMPERATURE_UNIT_CELSIUS)
+				if (temperatureUnit == TEMPERATURE_UNIT_CELSIUS)
 				{
 					temperatureUnit = TEMPERATURE_UNIT_FAHRENHEIT;
 				}
@@ -245,19 +239,19 @@ int main(void)
 			{
 				idx += snprintf (tempSign, sizeof(tempSign), "%.1f",
 				                 conevertToFerenhit (temperatureValue));
-				snprintf (tempSign + 4, sizeof(tempSign) - idx, "%s", " F");
-				#ifdef DEBUG_ON
+				snprintf (tempSign + idx, sizeof(tempSign) - idx, "%s", " F");
+#ifdef DEBUG_ON
 				printf ("buttonState = %d, tempSign = %s\r\n", buttonState, tempSign);
-				#endif
+#endif
 
 			}
 			else
 			{
 				idx += snprintf (tempSign, sizeof(tempSign), "%.1f", temperatureValue);
-				snprintf (tempSign + 4, sizeof(tempSign) - idx, "%s", " C");
-				#ifdef DEBUG_ON
+				snprintf (tempSign + idx, sizeof(tempSign) - idx, "%s", " C");
+#ifdef DEBUG_ON
 				printf ("buttonState = %d, tempSign = %s\r\n", buttonState, tempSign);
-				#endif
+#endif
 			}
 			idx = 0;
 
@@ -266,11 +260,11 @@ int main(void)
 
 			// Delay to take update temparature
 			HAL_Delay (500);
-			/* USER CODE END WHILE */
-			/* USER CODE BEGIN 3 */
 		}
-		/* USER CODE END 3 */
+		/* USER CODE END WHILE */
+		/* USER CODE BEGIN 3 */
 	}
+	/* USER CODE END 3 */
 }
 
 /**
@@ -599,22 +593,22 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 
 /*******************************************************************************
-  * FUNCTION      : setPwmDutyCycle()
-  * PARAMETERS    : timer_channel_num (input) : Pass here the channel number
-  *  			    Example : TIM_CHANNEL_1, TIM_CHANNEL_2 or TIM_CHANNEL_3
-  *  			    percentage (input) 		 : Pass here the duty cycle percentage (0-100)
-  * RETURNS       : none
-  * DESCRIPTION   : This function sets the duty cycle for timer 1's
-  *				 	whatever channel number is passed.
-  *******************************************************************************
-  */
+ * FUNCTION      : setPwmDutyCycle()
+ * PARAMETERS    : timer_channel_num (input) : Pass here the channel number
+ *  			    Example : TIM_CHANNEL_1, TIM_CHANNEL_2 or TIM_CHANNEL_3
+ *  			    percentage (input) 		 : Pass here the duty cycle percentage (0-100)
+ * RETURNS       : none
+ * DESCRIPTION   : This function sets the duty cycle for timer 1's
+ *				 	whatever channel number is passed.
+ *******************************************************************************
+ */
 void setPwmDutyCycle(ChannelNum_e timer_channel_num, uint16_t percentage)
 {
 	if (percentage > 100)
 	{
 		percentage = 100;
 	}
-	else if(percentage < 0)
+	else if (percentage < 0)
 	{
 		percentage = 0;
 	}
@@ -622,42 +616,50 @@ void setPwmDutyCycle(ChannelNum_e timer_channel_num, uint16_t percentage)
 }
 
 /*******************************************************************************
-  * FUNCTION      : getTempratureValue()
-  * PARAMETERS    : uint32_t iSensorValue
-  * RETURNS       : float
-  * DESCRIPTION   : This Function Calculates the Temparature value from value readed
-  * 				from sensor and returns float value which will be on °C.
-  *******************************************************************************
-  */
+ * FUNCTION      : getTempratureValue()
+ * PARAMETERS    : uint32_t iSensorValue
+ * RETURNS       : float
+ * DESCRIPTION   : This Function Calculates the Temparature value from value readed
+ * 				from sensor and returns float value which will be on °C.
+ *******************************************************************************
+ */
 static float getTempratureValue(uint32_t iSensorValue)
 {
 	return (((3.3 * iSensorValue) / 4096.0) - 0.5) * 100;
 }
 
 /*******************************************************************************
-  * FUNCTION      : conevertToFerenhit()
-  * PARAMETERS    : float temperatureValue
-  * RETURNS       : float
-  * DESCRIPTION   : This Function converts the value from °C to °F
-  *******************************************************************************
-  */
+ * FUNCTION      : conevertToFerenhit()
+ * PARAMETERS    : float temperatureValue
+ * RETURNS       : float
+ * DESCRIPTION   : This Function converts the value from °C to °F
+ *******************************************************************************
+ */
 static float conevertToFerenhit(float temperatureValue)
 {
 	return temperatureValue * (9 / 5) + 32;
 }
 
 /*******************************************************************************
-  * FUNCTION      : displayTemparatureAndGlowColour()
-  * PARAMETERS    : float temperatureValue
-  * RETURNS       : none
-  * DESCRIPTION   : This function derives the temprature range from temperatureValue
-  *					then accoding to defined raangle display Temprature string on OLED
-  *					and glow LED with colour.
-  *******************************************************************************
-  */
+ * FUNCTION      : displayTemparatureAndGlowColour()
+ * PARAMETERS    : float temperatureValue
+ * RETURNS       : none
+ * DESCRIPTION   : This function derives the temprature range from temperatureValue
+ *					then accoding to defined raangle display Temprature string on OLED
+ *					and glow LED with colour.
+ *******************************************************************************
+ */
 static void displayTemparatureAndGlowColour(float temperatureValue)
 {
 	int dutyCycle = 100;
+	static float prevTemp;
+
+	// To avoid over writing temprrature value because of sign
+	if((prevTemp < 0.0 && temperatureValue > 0.0) || (prevTemp > 0.0 && temperatureValue < 0.0))
+	{
+		ssd1331_clear_screen (BLACK);
+	}
+
 	if (temperatureValue < -15.0)
 	{
 		ssd1331_display_string (2, 2, "Temp.:", FONT_1206, PURPLE);
@@ -665,9 +667,9 @@ static void displayTemparatureAndGlowColour(float temperatureValue)
 		setPwmDutyCycle (TIM_CHANNEL_1, dutyCycle);	//Generating Shades of red
 		setPwmDutyCycle (TIM_CHANNEL_2, dutyCycle);	//Generating Shades of green
 		setPwmDutyCycle (TIM_CHANNEL_3, dutyCycle);	//Generating Shades of blue
-		#ifdef DEBUG_ON
+#ifdef DEBUG_ON
 		printf ("PURPLE\r\n");
-		#endif
+#endif
 	}
 	else if (temperatureValue >= -15.0 && temperatureValue <= 5.0)
 	{
@@ -676,9 +678,9 @@ static void displayTemparatureAndGlowColour(float temperatureValue)
 		setPwmDutyCycle (TIM_CHANNEL_1, 0);
 		setPwmDutyCycle (TIM_CHANNEL_2, 0);
 		setPwmDutyCycle (TIM_CHANNEL_3, dutyCycle);
-		#ifdef DEBUG_ON
+#ifdef DEBUG_ON
 		printf ("Blue\r\n");
-		#endif
+#endif
 	}
 	else if (temperatureValue >= 5.1 && temperatureValue <= 15.0)
 	{
@@ -687,9 +689,9 @@ static void displayTemparatureAndGlowColour(float temperatureValue)
 		setPwmDutyCycle (TIM_CHANNEL_1, dutyCycle);
 		setPwmDutyCycle (TIM_CHANNEL_2, dutyCycle);
 		setPwmDutyCycle (TIM_CHANNEL_3, 0);
-		#ifdef DEBUG_ON
+#ifdef DEBUG_ON
 		printf ("Yellow\r\n");
-		#endif
+#endif
 	}
 	else if (temperatureValue >= 15.1 && temperatureValue <= 25.0)
 	{
@@ -700,9 +702,9 @@ static void displayTemparatureAndGlowColour(float temperatureValue)
 //		setPwmDutyCycle (TIM_CHANNEL_1, dutyCycle);
 //		setPwmDutyCycle (TIM_CHANNEL_2, 15);
 		setPwmDutyCycle (TIM_CHANNEL_3, 0);
-		#ifdef DEBUG_ON
+#ifdef DEBUG_ON
 		printf ("Orange\r\n");
-		#endif
+#endif
 	}
 	else if (temperatureValue >= 25.1)
 	{
@@ -711,13 +713,14 @@ static void displayTemparatureAndGlowColour(float temperatureValue)
 		setPwmDutyCycle (TIM_CHANNEL_1, dutyCycle);
 		setPwmDutyCycle (TIM_CHANNEL_2, 0);
 		setPwmDutyCycle (TIM_CHANNEL_3, 0);
-		#ifdef DEBUG_ON
+#ifdef DEBUG_ON
 		printf ("Red\r\n");
-		#endif
+#endif
 	}
 	ssd1331_display_string (2, 20, "Press button to", FONT_1206, GOLDEN);
 	ssd1331_display_string (2, 32, "change unit", FONT_1206, GOLDEN);
 
+	prevTemp = temperatureValue;
 }
 
 /* USER CODE END 4 */
