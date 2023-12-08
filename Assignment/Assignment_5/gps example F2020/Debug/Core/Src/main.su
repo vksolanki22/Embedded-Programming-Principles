@@ -1,0 +1,13 @@
+../Core/Src/main.c:150:6:HAL_UART_RxCpltCallback	16	static
+../Core/Src/main.c:200:6:startUpLCDSplashScreen	32	static
+../Core/Src/main.c:224:13:parseUSTTime	24	static
+../Core/Src/main.c:254:13:parseLatitude	24	static
+../Core/Src/main.c:282:13:parseLongitude	24	static
+../Core/Src/main.c:307:6:printDataOnOLED	48	static
+../Core/Src/main.c:441:5:main	88	static
+../Core/Src/main.c:638:6:SystemClock_Config	96	static
+../Core/Src/main.c:699:13:MX_SPI1_Init	8	static
+../Core/Src/main.c:739:13:MX_TIM1_Init	96	static
+../Core/Src/main.c:809:13:MX_USART2_UART_Init	8	static
+../Core/Src/main.c:844:13:MX_GPIO_Init	40	static
+../Core/Src/main.c:879:6:Error_Handler	4	static

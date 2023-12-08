@@ -1,0 +1,2 @@
+../Core/Src/stm32l4xx_it.c:70:6:SysTick_Handler	8	static
+../Core/Src/stm32l4xx_it.c:91:6:USART2_IRQHandler	8	static
