@@ -1,7 +1,0 @@
-../Core/Src/main.c:70:5:main	16	static
-../Core/Src/main.c:154:6:SystemClock_Config	96	static
-../Core/Src/main.c:215:13:MX_ADC1_Init	32	static
-../Core/Src/main.c:273:13:MX_USART2_UART_Init	8	static
-../Core/Src/main.c:308:13:MX_GPIO_Init	40	static
-../Core/Src/main.c:331:7:getTempratureValue	16	static
-../Core/Src/main.c:342:6:Error_Handler	4	static,ignoring_inline_asm

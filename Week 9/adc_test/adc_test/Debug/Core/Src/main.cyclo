@@ -1,7 +1,0 @@
-../Core/Src/main.c:70:5:main	5
-../Core/Src/main.c:154:6:SystemClock_Config	4
-../Core/Src/main.c:215:13:MX_ADC1_Init	3
-../Core/Src/main.c:273:13:MX_USART2_UART_Init	2
-../Core/Src/main.c:308:13:MX_GPIO_Init	1
-../Core/Src/main.c:331:7:getTempratureValue	1
-../Core/Src/main.c:342:6:Error_Handler	1

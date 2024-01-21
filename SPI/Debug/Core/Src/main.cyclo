@@ -1,0 +1,11 @@
+../Core/Src/main.c:86:6:startUpOLEDSplashScreen	1
+../Core/Src/main.c:102:6:getName	2
+../Core/Src/main.c:126:6:getHeight	2
+../Core/Src/main.c:151:6:getWeight	2
+../Core/Src/main.c:176:6:calculateAndDisplayBMI	1
+../Core/Src/main.c:195:5:main	9
+../Core/Src/main.c:298:6:SystemClock_Config	4
+../Core/Src/main.c:360:13:MX_SPI1_Init	2
+../Core/Src/main.c:400:13:MX_USART2_UART_Init	2
+../Core/Src/main.c:435:13:MX_GPIO_Init	1
+../Core/Src/main.c:470:6:Error_Handler	1
